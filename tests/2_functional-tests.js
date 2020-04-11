@@ -6,6 +6,8 @@
 *       (if additional are added, keep them at the very end!)
 */
 
+// TODO: implement function to retrieves ID's for delete tests
+
 var chaiHttp = require('chai-http');
 var chai = require('chai');
 var assert = chai.assert;
@@ -50,7 +52,7 @@ suite('Functional Tests', function() {
       test('DELETE /api/threads/board', function(done) {
         chai.request(server)
           .delete('/api/threads/messageBoardTest')
-          .send({thread_id: '5e91ac52a44d461100526172', delete_password: 'test'})
+          .send({thread_id: '5e91fb9238232369f240cf58', delete_password: 'test'})
           .end(function(err, res) {
             assert.equal(res.status, 200)
             assert.equal(res.text, 'success');
